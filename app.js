@@ -50,3 +50,19 @@ function reset() {
     firstNum.classList.remove('redColor', 'greenColor');
     secondNum.classList.remove('redColor', 'greenColor')
 }
+
+const delayedColodChange = (color, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            btnReset.style.backgroundColor = color;
+            resolve();
+        }, delay)
+    })
+}
+
+delayedColodChange("red", 1000)
+    .then(()=>delayedColodChange('orange', 1000))
+    .then(()=>delayedColodChange('yellow', 1000))
+    .then(()=>delayedColodChange('green', 1000))
+    .then(()=>delayedColodChange('blue', 1000))
+    .then(()=>delayedColodChange('violet', 1000))
