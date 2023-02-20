@@ -60,9 +60,20 @@ const delayedColodChange = (color, delay) => {
     })
 }
 
-delayedColodChange("red", 1000)
-    .then(()=>delayedColodChange('orange', 1000))
-    .then(()=>delayedColodChange('yellow', 1000))
-    .then(()=>delayedColodChange('green', 1000))
-    .then(()=>delayedColodChange('blue', 1000))
-    .then(()=>delayedColodChange('violet', 1000))
+// delayedColodChange("red", 1000)
+//     .then(()=>delayedColodChange('orange', 1000))
+//     .then(()=>delayedColodChange('yellow', 1000))
+//     .then(()=>delayedColodChange('green', 1000))
+//     .then(()=>delayedColodChange('blue', 1000))
+//     .then(()=>delayedColodChange('violet', 1000))
+
+async function rainbow () {
+    await delayedColodChange('orange', 1000);
+    await delayedColodChange('yellow', 1000);
+    await delayedColodChange('green', 1000);
+    await delayedColodChange('blue', 1000);
+    await delayedColodChange('indigo', 1000);
+    await delayedColodChange('violet', 1000);
+    return "all done"
+}
+rainbow()
